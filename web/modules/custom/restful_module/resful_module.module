@@ -1,0 +1,11 @@
+<?php
+
+function restful_module_menu_alter(&$items)
+{
+    if (\Drupal::moduleHandler()->moduleExists('restful_module')) {
+        // Desactivar la ruta original de drupal_estrenar
+        if (isset($items['drupal_estrenar.form'])) {
+            $items['drupal_estrenar.form']['page callback'] = 'restful_module_data_callback';
+        }
+    }
+}

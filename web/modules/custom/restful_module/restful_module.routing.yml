@@ -1,0 +1,44 @@
+restful_module.users_list:
+  path: '/example-module/data'
+  defaults:
+    _controller: '\Drupal\restful_module\Controller\RestfulController::listUsers'
+    _format: 'json'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+restful_module.user_get:
+  path: '/example-module/data/{id}'
+  defaults:
+    _controller: '\Drupal\restful_module\Controller\RestfulController::getUser'
+    _format: 'json'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+restful_module.user_create:
+  path: '/example-module/data'
+  defaults:
+    _controller: '\Drupal\restful_module\Controller\RestfulController::createUser'
+    _format: 'json'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
+
+restful_module.user_update:
+  path: '/example-module/data/{id}'
+  defaults:
+    _controller: '\Drupal\restful_module\Controller\RestfulController::updateUser'
+    _format: 'json'
+  methods: [PUT]
+  requirements:
+    _access: 'TRUE'
+
+restful_module.user_delete:
+  path: '/example-module/data/{id}'
+  defaults:
+    _controller: '\Drupal\restful_module\Controller\RestfulController::deleteUser'
+    _format: 'json'
+  methods: [DELETE]
+  requirements:
+    _access: 'TRUE'
