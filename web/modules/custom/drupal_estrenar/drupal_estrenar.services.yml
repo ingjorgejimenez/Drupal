@@ -1,0 +1,5 @@
+services:
+  drupal_estrenar.event_subscriber:
+    class: Drupal\drupal_estrenar\EventSubscriber\DrupalEstrenarEventSubscriber
+    tags:
+      - { name: event_subscriber }

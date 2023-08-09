@@ -1,0 +1,86 @@
+<?php
+/**
+ * Implements hook_schema().
+ */
+function drupal_estrenar_schema()
+{
+    $schema['example_users'] = [
+        'description' => 'Tabla para almacenar los usuarios',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => true,
+                'not null' => true,
+                'description' => 'ID de usuario',
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => true,
+                'description' => 'Nombre del usuario',
+            ],
+            'identificacion' => [
+                'type' => 'varchar',
+                'length' => 12,
+                'not null' => true,
+                'description' => 'Identificación del usuario',
+            ],
+            'fecha_nacimiento' => [
+                'type' => 'datetime', // Cambio a datetime en lugar de date
+                'mysql_type' => 'datetime', // Cambio a datetime en lugar de date
+                'not null' => true,
+                'description' => 'Fecha de nacimiento del usuario',
+            ],
+            'cargo' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => true,
+                'description' => 'Cargo',
+            ],
+            'estado' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => true,
+                'default' => 0,
+                'description' => 'Estado ( 1 = Administrador, 0 = otros Cargos )',
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+    $schema['cargo_options'] = [
+        'description' => 'Tabla para almacenar las opciones de cargo',
+        'fields' => [
+            'value' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => true,
+                'description' => 'Valor de la opción',
+            ],
+            'label' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => true,
+                'description' => 'Etiqueta de la opción',
+            ],
+        ],
+        'primary key' => ['value'],
+    ];
+
+    return $schema;
+}
+
+function drupal_estrenar_install()
+{
+    $cargo_options = [
+        'Administrador' => 'Administrador',
+        'Webmaster' => 'Webmaster',
+        'Desarrollador' => 'Desarrollador',
+    ];
+
+    // Inserta las opciones en la tabla cargo_options.
+    foreach ($cargo_options as $value => $label) {
+        \Drupal::database()->insert('cargo_options')
+            ->fields(['value' => $value, 'label' => $label])
+            ->execute();
+    }
+}

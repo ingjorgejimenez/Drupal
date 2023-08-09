@@ -1,0 +1,108 @@
+%baseInput {
+    border: 1px solid #491283;
+    border-radius: 10px;
+    font-size: 16px;
+    min-height: 45px;
+    max-width: 100%;
+    padding: 0 20px;
+    width: 100%;
+
+    &::placeholder {
+        color: #989898;
+    }
+}
+
+#user-form-form {
+    padding-top: 50px;
+    margin: auto;
+    max-width: 1920px;
+
+    input:not([type="checkbox"]):not([type="file"]):not([type="radio"]):not([type=submit]) {
+        @extend %baseInput;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        width: 25px;
+        height: 20px;
+        opacity: none;
+        cursor: pointer;
+
+    }
+
+    input[type="date"] {
+        position: relative;
+    }
+
+    input[type="date"]::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 25px;
+        height: 20px;
+        background-image: url("../assets/calendar.png");
+        background-size: 100% 100%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        pointer-events: none;
+    }
+
+    select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background: url("../assets/dropdown.png") calc(100% - 20px) center no-repeat;
+        background-size: 18px;
+        @extend %baseInput;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        option {
+            color: #000;
+        }
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+        padding: 2px 5px 0;
+    }
+
+    .form-item {
+        margin-bottom: 0;
+    }
+
+    input[type="submit"] {
+        cursor: pointer;
+        background-color: #f6921e;
+        border: none;
+        border-radius: 30px;
+        display: block;
+        color: white;
+        padding: 0px 32px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 0;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        width: 100%;
+        margin-top: 15px;
+
+        @media only screen and (min-width:778px) {
+            width: max-content;
+        }
+
+        &:hover {
+            filter: brightness(0.8);
+        }
+    }
+
+    input:not([type="checkbox"]):not([type="file"]):not([type="submit"]) {
+
+        &:invalid,
+        &:empty {
+            background-color: #f1f1f1;
+            color: #989898;
+        }
+    }
+}

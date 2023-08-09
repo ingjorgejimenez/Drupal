@@ -1,0 +1,31 @@
+{#<div class="custom-form custom-form--estrenar">
+  {{ form_start(form) }}
+  
+  {{ form_row(form.name) }}
+  {{ form_row(form.identification) }}
+  {{ form_row(form.birthdate) }}
+  {{ form_row(form.cargo) }}
+  
+  {{ form_errors(form) }}
+  
+  {{ form_row(form.submit) }}
+  
+  {{ form_end(form) }} 
+</div>#}
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+<form{{ attributes }}>
+  {{ children }}
+</form>

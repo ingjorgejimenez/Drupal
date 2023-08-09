@@ -1,0 +1,15 @@
+drupal_estrenar.form:
+  path: '/example-module/form'
+  defaults:
+    _title: 'Mi Formulario'
+    _controller: '\Drupal\drupal_estrenar\Controller\FormController::FormMethod'
+  requirements:
+    _permission: 'access content'
+
+drupal_estrenar.data:
+  path: '/example-module/data-warning'
+  defaults:
+    _title: 'Mis Datos'
+    _controller: '\Drupal\drupal_estrenar\Controller\DataController::DataMethod'
+  requirements:
+    _permission: 'access content'

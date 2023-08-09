@@ -1,0 +1,13 @@
+<?php
+
+function drupal_estrenar_uninstall()
+{
+    // Eliminar table creada en el install para no generar espacio en la base de datos si se desinstala
+    if (\Drupal::database()->schema()->tableExists('example_users')) {
+        \Drupal::database()->schema()->dropTable('example_users');
+    }
+    if (\Drupal::database()->schema()->tableExists('cargo_options')) {
+        \Drupal::database()->schema()->dropTable('cargo_options');
+    }
+
+}

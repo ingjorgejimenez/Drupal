@@ -1,0 +1,5 @@
+name: 'Drupal Estrenar'
+type: module
+description: 'module for create Api rest and forms'
+core_version_requirement: ^8 || ^9 || ^10
+package: Estrenar
