@@ -1,0 +1,20 @@
+uuid: 97f0f9c8-5799-44e2-b44a-374c9ceb9ceb
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_numero_cuartos
+field_name: field_numero_cuartos
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

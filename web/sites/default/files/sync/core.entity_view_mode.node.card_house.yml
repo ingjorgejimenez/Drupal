@@ -1,0 +1,10 @@
+uuid: 2c8dc746-c53b-4ef5-b0f7-a65dc07bba9c
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_house
+label: card_casa
+targetEntityType: node
+cache: true

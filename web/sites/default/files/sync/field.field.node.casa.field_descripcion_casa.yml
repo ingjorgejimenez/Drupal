@@ -1,0 +1,22 @@
+uuid: 7329d1b2-a65d-438c-8c35-5f6a835b0fce
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_casa
+    - node.type.casa
+  module:
+    - text
+id: node.casa.field_descripcion_casa
+field_name: field_descripcion_casa
+entity_type: node
+bundle: casa
+label: 'Descripción de la casa'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

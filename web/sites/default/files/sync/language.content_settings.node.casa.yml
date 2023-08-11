@@ -1,0 +1,11 @@
+uuid: ff7db070-cd9f-4d31-8dc3-a3458eacac5f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.casa
+id: node.casa
+target_entity_type_id: node
+target_bundle: casa
+default_langcode: site_default
+language_alterable: false

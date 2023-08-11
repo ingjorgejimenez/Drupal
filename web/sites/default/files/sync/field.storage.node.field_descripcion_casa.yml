@@ -1,0 +1,20 @@
+uuid: 6ec9c47d-6944-4906-8694-8fa205920ef2
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_descripcion_casa
+field_name: field_descripcion_casa
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

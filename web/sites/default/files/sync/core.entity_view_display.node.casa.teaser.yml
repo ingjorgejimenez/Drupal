@@ -1,0 +1,29 @@
+uuid: 1c3a7b67-1ae2-4247-a093-b650a28487f8
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.casa.field_descripcion_casa
+    - field.field.node.casa.field_imagenes
+    - field.field.node.casa.field_numero_banos
+    - field.field.node.casa.field_numero_cuartos
+    - node.type.casa
+  module:
+    - user
+id: node.casa.teaser
+targetEntityType: node
+bundle: casa
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_descripcion_casa: true
+  field_imagenes: true
+  field_numero_banos: true
+  field_numero_cuartos: true
+  langcode: true
