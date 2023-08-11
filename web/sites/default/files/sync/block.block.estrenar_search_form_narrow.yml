@@ -1,0 +1,23 @@
+uuid: db94073d-75cd-4849-a9a6-6e5cf3abd05f
+langcode: es
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - estrenar
+_core:
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: estrenar_search_form_narrow
+theme: estrenar
+region: primary_menu
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Formulario de búsqueda (estrecho)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

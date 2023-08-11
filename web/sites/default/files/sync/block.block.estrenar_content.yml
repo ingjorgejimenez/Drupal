@@ -1,0 +1,22 @@
+uuid: 0cd51fcc-7a77-4620-b239-f47b0a318252
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - estrenar
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: estrenar_content
+theme: estrenar
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  label_display: '0'
+  provider: system
+visibility: {  }
