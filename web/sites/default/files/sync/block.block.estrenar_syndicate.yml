@@ -1,0 +1,23 @@
+uuid: 604be467-53cd-4ef0-ab67-ed773107eba5
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - estrenar
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: estrenar_syndicate
+theme: estrenar
+region: sidebar_first
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'Canal RSS'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: f1600bf3-e6f2-4377-b31d-3e6848a0808e
+langcode: es
+status: true
+dependencies:
+  theme:
+    - estrenar
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: estrenar_primary_local_tasks
+theme: estrenar
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Solapas principales'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

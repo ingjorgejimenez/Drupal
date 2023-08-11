@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.casa.field_imagenes
     - field.field.node.casa.field_numero_banos
     - field.field.node.casa.field_numero_cuartos
+    - image.style.large
     - node.type.casa
   module:
     - image
@@ -29,7 +30,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }
