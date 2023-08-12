@@ -1,0 +1,52 @@
+
+{{ attach_library('estrenar/house') }}
+{% set card__base_class = 'card-house' %}
+
+<div class="{{ card__base_class }}">
+
+	{# Image #}
+	<div class='{{card__base_class}}__imagen'>
+		{% block card__img %}
+		{% endblock %}
+	</div>
+
+	<div class='{{card__base_class}}__content'>
+		<div class='{{card__base_class}}__content-title'>
+			{#Heading #}
+			{% if card__heading %}
+		  		<h2 class="{{card__base_class}}__content-title-heading">{{card__heading}}</h2>
+			{% endif %}
+		</div>
+		<div class='{{card__base_class}}__content-details'>
+
+			{# recourse #}
+			{% if card__body__banos %}
+				<div class='{{card__base_class}}__content-details-recourse'>
+					<img src="/{{directory}}/components/card/card-house/assets/restroom.svg">
+					<div  class='{{card__base_class}}__content-details-recourse-body'>
+						{{card__body__banos}}
+					</div>
+				</div>
+			{% endif %}
+
+			{# view  #}
+			{% if card__body__view %}
+				<div class='{{card__base_class}}__content-details-view'>
+					<img src="/{{directory}}/components/card/card-house/assets/door.svg">
+	  				<div class='{{card__base_class}}__content-details-view-body'>
+						{{card__body__view}}
+					</div>
+				</div>
+			{% endif %}
+		</div>
+		{# Description #}
+		{% if card__body %}
+			<div class='{{card__base_class}}__content-description'>
+				{{card__body}}
+			</div>
+		{% endif %}
+	</div>
+	<a class='{{card__base_class}}__link'  href="{{card__link__url}}" target="_blank">
+		  {{card__link__text}}
+	  </a>
+</div>

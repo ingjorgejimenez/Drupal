@@ -67,49 +67,26 @@
  */
 #}
 
-{% set layout = layout ? 'layout--' ~ layout|clean_class %}
+{% set preview_custom = content['field_custom_preview_preview'][0] ? content['field_custom_preview_preview'][0]['#text'] : '' %}
+<article class="node">
 
-{%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    layout ? 'grid-full',
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
-%}
-<article{{ attributes.addClass(classes) }}>
-  <header class="{{ layout }}">
-    {{ title_prefix }}
-      {% if label and not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% if display_submitted %}
-      <div class="node__meta">
-      {% if author_picture %}
-        <div class="node__author-image">
-          {{ author_picture }}
-        </div>
-      {% endif %}
-        <span{{ author_attributes }}>
-          {{ 'By'|t }} {% apply spaceless %}{{ author_name }}{% endapply %}, {{ date }}
-        </span>
-        {{ metadata }}
-      </div>
-    {% endif %}
-  </header>
-  <div{{ content_attributes.addClass('node__content', layout) }}>
-    {# Comments not part of content, so they won't inherit .text-content styles. #}
-    {{ content|without('comment') }}
-  </div>
-  {% if content.comment %}
-    <div id="comments" class="{{ layout }}">
-      {{ content.comment }}
-    </div>
-  {% endif %}
+	{{ title_prefix }}
+	{{ title_suffix }}
+{% set numero_banos = content.field_numero_banos[0]['#markup'] %}
+{% set numero_cuartos = content.field_numero_cuartos[0]['#markup'] %}
+	<div{{content_attributes}}>
+		{% embed '@estrenar/components/card/card-house/card-house.twig' with {
+          card__heading: label,
+          card__body: content.field_descripcion_casa,
+          card__body__banos: 'Baños: '~ numero_banos,
+          card__body__view: 'Cuartos: '~ numero_cuartos ,
+          card__link__url: url,
+          card__link__text: 'ver más'
+                } %}
+			{% block card__img %}
+				{{ content.field_imagenes }}
+			{% endblock %}
+		
+		{% endembed %}
+	</div>
 </article>

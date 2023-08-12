@@ -1,0 +1,8 @@
+global:
+  css:
+    theme:
+      components/site/site.css: {}
+house:
+  css:
+    theme:
+      components/card/card-house/card-house.css: {}
