@@ -1,0 +1,9 @@
+card__image__src: 'https://opencourseware.urosario.edu.co/wp-content/uploads/2022/09/introduccion-competencias-medicas-700x466.jpg'
+card__image__alt: "This is card image's alt text"
+card__image__output_image_tag: true
+card__heading: 'Introducción a las competencias médicas'
+card__body: 'El curso está diseñado para comprender la filosofía, la cultura y las herramientas básicas de...'
+card__body__recourse: '21 recursos'
+card__body__view: '123 vistas'
+card__link__url: '#'
+card__link__text: 'ver más'

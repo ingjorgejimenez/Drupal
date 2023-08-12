@@ -152,7 +152,14 @@ display:
           value:
             casa: casa
       style:
-        type: grid_responsive
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: ''
+          class: 'grid grid--3'
       row:
         type: 'entity:node'
         options:
@@ -167,6 +174,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: ''
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -187,7 +195,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: listado-de-casa
+      path: listado-de-casas
     cache_metadata:
       max-age: -1
       contexts:
@@ -248,7 +256,7 @@ display:
       defaults:
         arguments: false
       display_extenders: {  }
-      path: listado-de-casa
+      path: listado-de-casas
     cache_metadata:
       max-age: -1
       contexts:
